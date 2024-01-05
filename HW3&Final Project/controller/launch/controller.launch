@@ -1,0 +1,16 @@
+<!-- -->
+<launch>
+
+  <arg name="role_name" default="ego_vehicle" />
+
+
+  <node pkg="controller" type="controller" name="controller" output="screen">
+    <param name="role_name" type="string" value="$(arg role_name)" />
+    <!-- <remap from="~waypoints" to="/reference_line/local_waypoint"/> -->
+
+    
+    <rosparam command="load" file="$(find controller)/config/controller_config.yaml"/>
+
+
+  </node>
+</launch>
